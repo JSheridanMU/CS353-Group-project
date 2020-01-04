@@ -26,16 +26,13 @@ var goMail = function (message) {
         text: body
     };
 
-    //this is callback function to return status to firebase console
     const getDeliveryStatus = function (error, info) {
         if (error) {
             return console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     };
-
-    //call of this function send an email, and return status
+    
     transporter.sendMail(mailOptions, getDeliveryStatus);
 };
 
